@@ -26,6 +26,18 @@ services:
     environment:
       - NEXTCLOUD_ADMIN_USER=root
       - NEXTCLOUD_ADMIN_PASSWORD=1
+      - UPLOAD_MAX_SIZE=1024G
+      - APC_SHM_SIZE=128M
+      - OPCACHE_MEM_SIZE=128
+      - CRON_PERIOD=15m
+      - NEXTCLOUD_TRUSTED_DOMAINS=cloud.example.com
+      - OVERWRITEPROTOCOL=https
+      - TZ=Asia/Seoul
+      - DB_TYPE=mysql
+      - DB_NAME=nextcloud
+      - DB_USER=nextcloud
+      - DB_PASSWORD=1
+      - DB_HOST="db:3306"
     restart: always
     depends_on:
       - db
